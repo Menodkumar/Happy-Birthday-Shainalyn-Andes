@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="theme-color" content="#160b24">
+  <meta name="description" content="A little birthday universe made with love for Shainalyn Andes.">
+  <meta property="og:title" content="Happy Birthday, Shainalyn Andes 💗">
+  <meta property="og:description" content="A tiny birthday surprise made with love.">
+  <meta property="og:type" content="website">
+  <title>Happy Birthday, Shainalyn Andes 💗</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Dancing+Script:wght@600;700&family=Playfair+Display:wght@700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div id="loader" aria-hidden="true">
+    <div class="loader-heart">♥</div>
+    <p>Preparing a little surprise...</p>
+  </div>
+
+  <div class="ambient" aria-hidden="true">
+    <span class="orb orb-a"></span><span class="orb orb-b"></span><span class="orb orb-c"></span>
+  </div>
+  <canvas id="particles" aria-hidden="true"></canvas>
+  <div id="confetti" aria-hidden="true"></div>
+  <audio id="birthdayAudio" src="birthday-music.wav" preload="auto" loop></audio>
+
+  <header class="topbar">
+    <a class="brand" href="#home" aria-label="Home">N<span>♥</span></a>
+    <nav>
+      <a href="#home">Home</a>
+      <a href="#memories">Memories</a>
+      <a href="#letter">Letter</a>
+    </nav>
+    <button class="music-btn" id="musicBtn" type="button" aria-label="Toggle birthday music" aria-pressed="false">
+      <span class="music-bars"><i></i><i></i><i></i><i></i></span>
+      <span id="musicText">Music</span>
+    </button>
+  </header>
+
+  <main>
+    <section class="hero" id="home">
+      <div class="hero-copy reveal">
+        <div class="eyebrow"><span>✦</span> A little celebration for you <span>✦</span></div>
+        <h1><span>Happy</span><strong>Birthday</strong></h1>
+        <p class="hero-name">Shainalyn Andes <span>♥</span></p>
+        <p class="hero-sub">Today is your day. So let the sky keep a little extra sparkle for you.</p>
+
+        <div class="countdown-card">
+          <p class="countdown-label">UNTIL YOUR BIRTHDAY · PHILIPPINES TIME</p>
+          <div class="countdown" id="countdown" aria-live="polite">
+            <div><b id="days">00</b><small>Days</small></div>
+            <span>:</span>
+            <div><b id="hours">00</b><small>Hours</small></div>
+            <span>:</span>
+            <div><b id="minutes">00</b><small>Minutes</small></div>
+            <span>:</span>
+            <div><b id="seconds">00</b><small>Seconds</small></div>
+          </div>
+        </div>
+
+        <div class="hero-actions">
+          <button class="primary-btn" id="celebrateBtn">Celebrate! <span>✨</span></button>
+          <button class="ghost-btn" id="openLetterTop">Open your letter <span>♡</span></button>
+        </div>
+      </div>
+
+      <div class="hero-art reveal">
+        <div class="halo"></div>
+        <div class="sparkle s1">✦</div><div class="sparkle s2">✧</div><div class="sparkle s3">✦</div>
+        <div class="balloon balloon-left"><img src="images/balloon1.png" alt=""></div>
+        <div class="balloon balloon-right"><img src="images/balloon2.png" alt=""></div>
+        <div class="portrait-frame">
+          <div class="portrait">
+            <img src="images/shainalyn.jpg" alt="A birthday portrait for Shainalyn Andes">
+          </div>
+          <div class="name-pill">♡ Shainalyn Andes ♡</div>
+        </div>
+        <div class="cake-card">
+          <div class="cake">🎂</div>
+          <span>Make a wish!</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="wish-section">
+      <div class="section-heading reveal">
+        <span class="mini-label">THE WISH</span>
+        <h2>May your birthday be <em>amazing</em>.</h2>
+        <p>More laughter, good vibes, and new memories as our friendship begins.</p>
+      </div>
+      <div class="wish-grid">
+        <article class="wish-card reveal"><span>🌷</span><h3>First game soon</h3><p>Hopefully our first MLBB game is just the beginning of many fun moments.</p></article>
+        <article class="wish-card reveal"><span>🌙</span><h3>Good vibes</h3><p>May your days be filled with happiness, laughter, and good people.</p></article>
+        <article class="wish-card reveal"><span>✨</span><h3>New memories</h3><p>Here’s to getting to know each other better and making great memories.</p></article>
+      </div>
+    </section>
+
+    <section class="memories-section" id="memories">
+      <div class="section-heading reveal">
+        <span class="mini-label">A FEW LITTLE MOMENTS</span>
+        <h2>Memories, but make them <em>sparkle.</em></h2>
+      </div>
+      <div class="gallery">
+        <figure class="gallery-main reveal">
+          <img src="images/shainalyn.jpg" alt="Shainalyn Andes">
+          <figcaption><span>01</span> A smile worth remembering.</figcaption>
+        </figure>
+        <figure class="gallery-small reveal">
+          <img src="images/shainalyn.jpg" alt="Cute animated birthday moment">
+          <figcaption><span>02</span> A new friendship, just getting started.</figcaption>
+        </figure>
+        <div class="quote-card reveal">
+          <div class="quote-mark">“</div>
+          <p>Sometimes a new friendship starts simply by ending up in the same squad.</p>
+          <span>— your MLBB squadmate ♡</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="letter-section" id="letter">
+      <div class="envelope reveal" id="envelope">
+        <div class="envelope-flap"></div>
+        <div class="envelope-paper">
+          <span>For Shainalyn Andes</span>
+          <strong>A little letter awaits...</strong>
+          <button class="primary-btn" id="openLetter">Open it ♥</button>
+        </div>
+        <div class="envelope-seal">♥</div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>Made with <span>♥</span> and a ridiculous amount of CSS.</p>
+    <a href="https://github.com/Menodkumar" target="_blank" rel="noopener">Menodkumar Oinam ↗</a>
+  </footer>
+
+  <div class="modal" id="letterModal" role="dialog" aria-modal="true" aria-labelledby="letterTitle" hidden>
+    <div class="modal-backdrop" data-close="true"></div>
+    <article class="letter-modal">
+      <button class="close-modal" id="closeLetter" aria-label="Close letter">×</button>
+      <div class="letter-decoration">♡</div>
+      <p class="mini-label">A LETTER FOR YOU</p>
+      <h2 id="letterTitle">To you, Shainalyn Andes ♡</h2>
+      <div class="typewriter" id="letterText"></div>
+      <div class="signature">With love,<br><strong>Menodkumar</strong></div>
+      <div class="modal-actions">
+        <button class="primary-btn" id="modalCelebrate">Celebrate again ✨</button>
+      </div>
+    </article>
+  </div>
+
+  <div class="toast" id="toast" role="status">Make a wish. The universe is listening. ✨</div>
+  <script src="script.js"></script>
+</body>
+</html>
